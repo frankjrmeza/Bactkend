@@ -37,12 +37,12 @@ public class UsuariosServicioImpl implements UsuariosServicios{
 
     @Override
     @Transactional()
-    public Usuario getUsuario(String id) {
+    public Usuario getUsuario(int id) {
         return usuariosR.getOne(id);
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(int id) {
         usuariosR.deleteById(id);
     }
     

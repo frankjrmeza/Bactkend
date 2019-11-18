@@ -5,7 +5,9 @@
  */
 package com.api.Backend.rutas;
 
+import com.api.Backend.modelos.Administrador;
 import com.api.Backend.modelos.Usuario;
+import com.api.Backend.servicio.AdministradorServicios;
 import com.api.Backend.servicio.UsuariosServicios;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,39 +30,40 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/app")
-public class UsuariosRutas {
-
+public class AdminiistradorRutas {
+    
     @Autowired
-    UsuariosServicios service;
+    AdministradorServicios service;
 
-    @GetMapping("/Usuario")
-    public List<Usuario> getUsuarios() {
-        return service.getUsuarios();
+    @GetMapping("/Administrador")
+    public List<Administrador> getAdministradores() {
+        return service.getAdministrador();
     }
 
-    @GetMapping("/Usuario/{Id}")
-    public Usuario getPersona(@PathVariable int Id) {
-        Usuario p = service.getUsuario(Id);
-        return p;
+    @GetMapping("/Administrador/{Id}")
+    public Administrador getAdministrador(@PathVariable String Id) {
+        Administrador a = service.getAdministrador(Id);
+        return a;
     }
 
-    @PostMapping("/Usuario")
+    @PostMapping("/Administrador")
     @ResponseStatus(HttpStatus.CREATED)
-    public Usuario save(@RequestBody Usuario p) {
-        p.setId(0);
-        service.save(p);
-        return p;
+    public Administrador save(@RequestBody Administrador a) {
+        a.setId("");
+        service.save(a);
+        return a;
     }
 
-    @PutMapping("/Usuario")
+    @PutMapping("/Administrador")
     @ResponseStatus(HttpStatus.CREATED)
-    public Usuario update(@RequestBody Usuario p) {
-        service.save(p);
-        return p;
+    public Administrador update(@RequestBody Administrador a) {
+        service.save(a);
+        return a;
     }
 
-    @DeleteMapping("/Usuario/eliminar/{id}")
-    public void delete(@PathVariable int id) {
+    @DeleteMapping("/Administrador/eliminar/{id}")
+    public void delete(@PathVariable String id) {
         service.delete(id);
     }
+    
 }

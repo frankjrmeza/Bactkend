@@ -5,12 +5,13 @@
  */
 package com.api.Backend.repository;
 
-import com.api.Backend.modelos.Usuario;
+import com.api.Backend.modelos.Administrador;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosRepositorio extends JpaRepository <Usuario, Integer> {
+public interface AdministradorRepositorio extends JpaRepository<Administrador, String> {
+    
 }

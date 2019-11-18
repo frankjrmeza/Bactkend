@@ -5,16 +5,16 @@
  */
 package com.api.Backend.servicio;
 
-import com.api.Backend.modelos.Usuario;
+import com.api.Backend.modelos.Administrador;
 import java.util.List;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosServicios {
-    public List<Usuario> getUsuarios();
-    public void save(Usuario u);
-    public Usuario getUsuario(int id);
-    public void delete(int id);
+public interface AdministradorServicios {
+    public List<Administrador> getAdministrador();
+    public void save(Administrador a);
+    public Administrador getAdministrador(String id);
+    public void delete(String id);
 }
