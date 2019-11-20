@@ -5,9 +5,9 @@
  */
 package com.api.Backend.servicios.impl;
 
-import com.api.Backend.modelos.Usuario;
-import com.api.Backend.repository.UsuariosRepositorio;
-import com.api.Backend.servicio.UsuariosServicios;
+import com.api.Backend.modelos.Parqueadero;
+import com.api.Backend.repository.ParqueaderoRepositorio;
+import com.api.Backend.servicio.ParqueaderoServicios;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,32 +18,33 @@ import org.springframework.stereotype.Service;
  * @author Dell
  */
 @Service
-public class UsuariosServicioImpl implements UsuariosServicios{
+public class ParqueaderoServiciosImpl implements ParqueaderoServicios{
     
     @Autowired
-    UsuariosRepositorio usuariosR;
+    ParqueaderoRepositorio par;
 
     @Override
-    @Transactional()
-    public List<Usuario> getUsuarios() {
-        return usuariosR.findAll();
+    @Transactional
+    public List<Parqueadero> getParqueaderos() {
+        return par.findAll();
     }
 
     @Override
     @Transactional
-    public void save(Usuario u) {
-        usuariosR.save(u);
+    public void save(Parqueadero p) {
+        par.save(p);
     }
 
     @Override
-    @Transactional()
-    public Usuario getUsuario(String id) {
-        return usuariosR.getOne(id);
+    @Transactional
+    public Parqueadero getParqueadero(String id) {
+        return par.getOne(id);
     }
 
     @Override
     public void delete(String id) {
-        usuariosR.deleteById(id);
+        par.deleteById(id);
     }
+    
     
 }

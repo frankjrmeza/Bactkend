@@ -5,12 +5,13 @@
  */
 package com.api.Backend.repository;
 
-import com.api.Backend.modelos.Usuario;
+import com.api.Backend.modelos.Reserva;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosRepositorio extends JpaRepository <Usuario, String> {
+public interface ReservaRepositorio extends JpaRepository <Reserva, String> {
+    
 }

@@ -5,8 +5,8 @@
  */
 package com.api.Backend.rutas;
 
-import com.api.Backend.modelos.Administrador;
-import com.api.Backend.servicio.AdministradorServicios;
+import com.api.Backend.modelos.Reserva;
+import com.api.Backend.servicio.ReservaServicios;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,40 +28,41 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/app")
-public class AdminiistradorRutas {
 
+public class ReservaRutas {
+    
     @Autowired
-    AdministradorServicios service;
+    ReservaServicios service;
 
-    @GetMapping("/Administrador")
-    public List<Administrador> getAdministradores() {
-        return service.getAdministrador();
+    @GetMapping("/Reserva")
+    public List<Reserva> getAdministradores() {
+        return service.getReservas();
     }
 
     @GetMapping("/Administrador/{Id}")
-    public Administrador getAdministrador(@PathVariable String Id) {
-        Administrador a = service.getAdministrador(Id);
-        return a;
+    public Reserva getAdministrador(@PathVariable String Id) {
+        Reserva r = service.getReserva(Id);
+        return r;
     }
 
-    @PostMapping("/Administrador")
+    @PostMapping("/Reserva")
     @ResponseStatus(HttpStatus.CREATED)
-    public Administrador save(@RequestBody Administrador a) {
-        a.setId("");
-        service.save(a);
-        return a;
+    public Reserva save(@RequestBody Reserva r) {
+        r.setId("");
+        service.save(r);
+        return r;
     }
 
-    @PutMapping("/Administrador")
+    @PutMapping("/Reserva")
     @ResponseStatus(HttpStatus.CREATED)
-    public Administrador update(@RequestBody Administrador a) {
-        service.save(a);
-        return a;
+    public Reserva update(@RequestBody Reserva r) {
+        service.save(r);
+        return r;
     }
 
-    @DeleteMapping("/Administrador/eliminar/{id}")
+    @DeleteMapping("/Reserva/eliminar/{id}")
     public void delete(@PathVariable String id) {
         service.delete(id);
     }
-
+    
 }

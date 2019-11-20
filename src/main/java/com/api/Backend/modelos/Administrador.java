@@ -17,6 +17,7 @@ public class Administrador {
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")  
     private String id;
+    
     @Column(name = "nombre")
     private String nombre;
     

@@ -5,12 +5,14 @@
  */
 package com.api.Backend.repository;
 
-import com.api.Backend.modelos.Usuario;
+
+import com.api.Backend.modelos.Parqueadero;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosRepositorio extends JpaRepository <Usuario, String> {
+public interface ParqueaderoRepositorio extends JpaRepository <Parqueadero, String> {
+    
 }

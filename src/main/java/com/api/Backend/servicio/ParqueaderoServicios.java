@@ -5,16 +5,17 @@
  */
 package com.api.Backend.servicio;
 
-import com.api.Backend.modelos.Usuario;
+import com.api.Backend.modelos.Parqueadero;
 import java.util.List;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosServicios {
-    public List<Usuario> getUsuarios();
-    public void save(Usuario u);
-    public Usuario getUsuario(String id);
+public interface ParqueaderoServicios {
+    public List<Parqueadero> getParqueaderos();
+    public void save(Parqueadero p);
+    public Parqueadero getParqueadero(String id);
     public void delete(String id);
+    
 }

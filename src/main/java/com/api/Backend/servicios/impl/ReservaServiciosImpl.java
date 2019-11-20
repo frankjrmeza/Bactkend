@@ -5,9 +5,9 @@
  */
 package com.api.Backend.servicios.impl;
 
-import com.api.Backend.modelos.Usuario;
-import com.api.Backend.repository.UsuariosRepositorio;
-import com.api.Backend.servicio.UsuariosServicios;
+import com.api.Backend.modelos.Reserva;
+import com.api.Backend.repository.ReservaRepositorio;
+import com.api.Backend.servicio.ReservaServicios;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,32 +18,32 @@ import org.springframework.stereotype.Service;
  * @author Dell
  */
 @Service
-public class UsuariosServicioImpl implements UsuariosServicios{
+public class ReservaServiciosImpl implements ReservaServicios {
     
     @Autowired
-    UsuariosRepositorio usuariosR;
+    ReservaRepositorio res;
 
     @Override
     @Transactional()
-    public List<Usuario> getUsuarios() {
-        return usuariosR.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void save(Usuario u) {
-        usuariosR.save(u);
+    public List<Reserva> getReservas() {
+        return res.findAll();
     }
 
     @Override
     @Transactional()
-    public Usuario getUsuario(String id) {
-        return usuariosR.getOne(id);
+    public void save(Reserva r) {
+        res.save(r);
+    }
+
+    @Override
+    @Transactional()
+    public Reserva getReserva(String id) {
+        return res.getOne(id);
     }
 
     @Override
     public void delete(String id) {
-        usuariosR.deleteById(id);
+        res.deleteById(id);
     }
     
 }

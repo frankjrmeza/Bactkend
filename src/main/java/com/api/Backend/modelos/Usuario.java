@@ -3,54 +3,55 @@ package com.api.Backend.modelos;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
-   
+
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    private String id;
 
     @Column(name = "nombre")
     private String nombre;
-    
+
     @Column(name = "apellido")
     private String apellido;
-    
+
     @Column(name = "usuario")
     private String usuario;
-    
+
     @Column(name = "contraseña")
     private String contraseña;
-    
+
     @Column(name = "correo")
     private String correo;
-    
+
     @Column(name = "telefono")
     private String telefono;
-    
+
     @Column(name = "placaVehiculo")
     private String placaVehiculo;
-    
+
     @Column(name = "tipoVehiculo")
     private String tipoVehiculo;
 
     /**
      * @return the id
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -165,7 +166,5 @@ public class Usuario {
     public void setTipoVehiculo(String tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
     }
-    
-    
-    
+
 }

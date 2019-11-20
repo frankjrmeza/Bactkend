@@ -5,16 +5,17 @@
  */
 package com.api.Backend.servicio;
 
-import com.api.Backend.modelos.Usuario;
+import com.api.Backend.modelos.Reserva;
 import java.util.List;
 
 /**
  *
  * @author Dell
  */
-public interface UsuariosServicios {
-    public List<Usuario> getUsuarios();
-    public void save(Usuario u);
-    public Usuario getUsuario(String id);
+public interface ReservaServicios {
+    public List<Reserva> getReservas();
+    public void save(Reserva r);
+    public Reserva getReserva(String id);
     public void delete(String id);
+    
 }

@@ -5,8 +5,8 @@
  */
 package com.api.Backend.rutas;
 
-import com.api.Backend.modelos.Administrador;
-import com.api.Backend.servicio.AdministradorServicios;
+import com.api.Backend.modelos.Parqueadero;
+import com.api.Backend.servicio.ParqueaderoServicios;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,40 +28,40 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/app")
-public class AdminiistradorRutas {
-
+public class ParqueaderoRutas {
+    
     @Autowired
-    AdministradorServicios service;
+    ParqueaderoServicios service;
 
-    @GetMapping("/Administrador")
-    public List<Administrador> getAdministradores() {
-        return service.getAdministrador();
+    @GetMapping("/Parqueadero")
+    public List<Parqueadero> getAdministradores() {
+        return service.getParqueaderos();
     }
 
     @GetMapping("/Administrador/{Id}")
-    public Administrador getAdministrador(@PathVariable String Id) {
-        Administrador a = service.getAdministrador(Id);
-        return a;
+    public Parqueadero getAdministrador(@PathVariable String Id) {
+        Parqueadero p = service.getParqueadero(Id);
+        return p;
     }
 
-    @PostMapping("/Administrador")
+    @PostMapping("/Parqueadero")
     @ResponseStatus(HttpStatus.CREATED)
-    public Administrador save(@RequestBody Administrador a) {
-        a.setId("");
-        service.save(a);
-        return a;
+    public Parqueadero save(@RequestBody Parqueadero p) {
+        p.setId("");
+        service.save(p);
+        return p;
     }
 
-    @PutMapping("/Administrador")
+    @PutMapping("/Parqueadero")
     @ResponseStatus(HttpStatus.CREATED)
-    public Administrador update(@RequestBody Administrador a) {
-        service.save(a);
-        return a;
+    public Parqueadero update(@RequestBody Parqueadero p) {
+        service.save(p);
+        return p;
     }
 
-    @DeleteMapping("/Administrador/eliminar/{id}")
+    @DeleteMapping("/Parqueadero/eliminar/{id}")
     public void delete(@PathVariable String id) {
         service.delete(id);
     }
-
+    
 }

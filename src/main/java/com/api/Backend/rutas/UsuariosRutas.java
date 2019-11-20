@@ -39,7 +39,7 @@ public class UsuariosRutas {
     }
 
     @GetMapping("/Usuario/{Id}")
-    public Usuario getPersona(@PathVariable int Id) {
+    public Usuario getUsuario(@PathVariable String Id) {
         Usuario p = service.getUsuario(Id);
         return p;
     }
@@ -47,7 +47,7 @@ public class UsuariosRutas {
     @PostMapping("/Usuario")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario save(@RequestBody Usuario p) {
-        p.setId(0);
+        p.setId("");
         service.save(p);
         return p;
     }
@@ -60,7 +60,7 @@ public class UsuariosRutas {
     }
 
     @DeleteMapping("/Usuario/eliminar/{id}")
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable String id) {
         service.delete(id);
     }
 }

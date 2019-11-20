@@ -3,7 +3,6 @@ package com.api.Backend.modelos;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
@@ -11,18 +10,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "Reserva")
 public class Reserva {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")  
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
-    
+
     @Column(name = "nombreP")
     private String nombreP;
-    
+
     @Column(name = "placaVehiculo")
     private String placaVehiculo;
-    
+
     @Column(name = "tiempoReserva")
     private String tiempoReserva;
 
@@ -67,6 +67,5 @@ public class Reserva {
     public void setTiempoReserva(String tiempoReserva) {
         this.tiempoReserva = tiempoReserva;
     }
-    
-    
+
 }
