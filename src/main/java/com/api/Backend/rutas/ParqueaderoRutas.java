@@ -34,12 +34,12 @@ public class ParqueaderoRutas {
     ParqueaderoServicios service;
 
     @GetMapping("/Parqueadero")
-    public List<Parqueadero> getAdministradores() {
+    public List<Parqueadero> getParqueaderos() {
         return service.getParqueaderos();
     }
 
-    @GetMapping("/Administrador/{Id}")
-    public Parqueadero getAdministrador(@PathVariable String Id) {
+    @GetMapping("/Parqueadero/{Id}")
+    public Parqueadero getParqueadero(@PathVariable String Id) {
         Parqueadero p = service.getParqueadero(Id);
         return p;
     }
@@ -47,7 +47,7 @@ public class ParqueaderoRutas {
     @PostMapping("/Parqueadero")
     @ResponseStatus(HttpStatus.CREATED)
     public Parqueadero save(@RequestBody Parqueadero p) {
-        p.setId("");
+        p.setIdParqueadero("");
         service.save(p);
         return p;
     }

@@ -35,12 +35,12 @@ public class ReservaRutas {
     ReservaServicios service;
 
     @GetMapping("/Reserva")
-    public List<Reserva> getAdministradores() {
+    public List<Reserva> getReservas() {
         return service.getReservas();
     }
 
-    @GetMapping("/Administrador/{Id}")
-    public Reserva getAdministrador(@PathVariable String Id) {
+    @GetMapping("/Reserva/{Id}")
+    public Reserva getReserva(@PathVariable String Id) {
         Reserva r = service.getReserva(Id);
         return r;
     }
