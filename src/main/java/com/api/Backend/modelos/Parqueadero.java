@@ -16,7 +16,10 @@ public class Parqueadero {
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String idParqueadero;
-
+    
+    @Column(name = "dueno")
+    private String dueno;
+    
     @Column(name = "nombreP")
     private String nombreP;
 
@@ -132,6 +135,22 @@ public class Parqueadero {
     public void setIdParqueadero(String idParqueadero) {
         this.idParqueadero = idParqueadero;
     }
+
+    /**
+     * @return the dueno
+     */
+    public String getDueno() {
+        return dueno;
+    }
+
+    /**
+     * @param dueno the dueno to set
+     */
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
+    }
+
+ 
 
     
 

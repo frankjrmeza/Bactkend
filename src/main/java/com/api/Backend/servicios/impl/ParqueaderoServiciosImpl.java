@@ -26,7 +26,7 @@ public class ParqueaderoServiciosImpl implements ParqueaderoServicios{
     @Override
     @Transactional
     public List<Parqueadero> getParqueaderos() {
-        return par.findAll();
+        return (List<Parqueadero>) par.findAll();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ParqueaderoServiciosImpl implements ParqueaderoServicios{
     @Override
     @Transactional
     public Parqueadero getParqueadero(String id) {
-        return par.getOne(id);
+        return par.findById(id).get();
     }
 
     @Override
